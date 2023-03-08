@@ -1,0 +1,58 @@
+@use "sass:math";
+
+$select: ".slide" !default;
+
+// config
+@use "Shared/scss/templates/base/config/units";
+
+// layouts
+@use "Shared/scss/templates/base/layouts/slide" with (
+    $select: $select
+);
+
+@mixin base {
+    @include slide.base {
+        $length: units.em(1100);
+        $offset: 8em;
+
+        --carousel-length: #{$length};
+        --carousel-offset: #{$offset};
+
+        @media all and (min-width: slide.$desktop) {
+            &__into {
+                max-width: var(--carousel-length, #{$length});
+                width: calc(100% - var(--carousel-offset, #{$offset}));
+                margin: auto;
+            }
+
+            &__nav {
+                max-width: calc(
+                    var(--carousel-length, #{$length}) +
+                        var(--carousel-offset, #{$offset})
+                );
+                width: 100%;
+            }
+        }
+    }
+
+    #{$select} {
+        margin: auto;
+
+        @content;
+    }
+}
+
+@mixin vimeo-carousel {
+    @include slide.vimeo-carousel;
+
+    #{$select} {
+        &--vimeo-carousel {
+            width: 100%;
+
+            #{$select} {
+            }
+
+            @content;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use "sass:math";
+
+$select: ".contain" !default;
+
+// utils
+@forward "Shared/scss/templates/base/utils/contain";
+@use "Shared/scss/templates/base/utils/contain" as _contain;
+
+@mixin video {
+    #{$select} {
+        &--video {
+            @include _contain.ratio($ratio: math.div(16, 9)) {
+            }
+        }
+
+        @content;
+    }
+}

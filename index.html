@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Vimeo</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <script defer src="./js/app.es5.js"></script>
+</head>
+<body>
+    <div class="slide slide--vimeo-carousel">
+        <div class="slide__into" tabindex="0" id="vimeo-carousel">
+            <div class="slide__item">
+                <div data-vimeo-carousel-id="152839850&background=1&loop=0" class="contain contain--video"></div>
+            </div>
+            <div class="slide__item">
+                <div data-vimeo-carousel-id="156161909&background=1&loop=0" class="contain contain--video"></div>
+            </div>
+            <div class="slide__item">
+                <div data-vimeo-carousel-id="160730254&background=1&loop=0" class="contain contain--video"></div>
+            </div>
+        </div>
+        <div class="slide__nav">
+            <button aria-label="Previous" class="slide__prev" type="button">
+                <svg class="icon">
+                    <use href="#icon-chevron"></use>
+                </svg>
+            </button>
+            <button aria-label="Next" class="slide__next" type="button">
+                <svg class="icon">
+                    <use href="#icon-chevron"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <svg hidden>
+        <symbol id="icon-chevron" x="0px" y="0px" viewBox="0 0 5.3 8.2">
+            <path d="M0.8,4.2 M0.8,4.2L4,1 M4,7.4L0.8,4.2"/>
+        </symbol>
+    </svg>
+</body>
+</html>

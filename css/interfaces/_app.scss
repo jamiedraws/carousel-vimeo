@@ -1,0 +1,25 @@
+// utils
+@use "Shared/scss/templates/base/utils/svg-icon";
+@use "./../utils/contain";
+
+// components
+
+// layouts
+@use "Shared/scss/templates/base/layouts/document";
+@use "./../layouts/slide";
+
+@mixin page {
+    // utils
+    @include svg-icon.base {
+    }
+    @include contain.base;
+    @include contain.video;
+
+    // components
+
+    // layouts
+    @include document.base;
+
+    @include slide.base;
+    @include slide.vimeo-carousel;
+}
